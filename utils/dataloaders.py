@@ -573,7 +573,7 @@ class LoadImagesAndLabels(Dataset):
 
         try:
             f = []  # image files
-            for p in path if isinstance(path, list) else [path]:
+            for p in path if isinstance(path, list) else [path]: # 兼容windows和linux
                 p = Path(p)  # os-agnostic
                 if p.is_dir():  # dir
                     f += glob.glob(str(p / "**" / "*.*"), recursive=True)
